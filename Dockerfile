@@ -20,6 +20,7 @@ RUN wget -q https://archive.apache.org/dist/tomcat/tomcat-${TOMCAT_MAJOR_VERSION
 ADD create_tomcat_admin_user.sh /create_tomcat_admin_user.sh
 ADD run.sh /run.sh
 RUN chmod +x /*.sh
-ADD ./target/spring-security-tutorial.war /tomcat/webapps/spring-security-tutorial.war
+run apt-get -y install unzip
+#ADD ./target/spring-security-tutorial.war /tomcat/webapps/spring-security-tutorial.war
 EXPOSE 8080
 CMD ["/run.sh"]
